@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+'''defining various vars'''
 
 
 a: int = 1
