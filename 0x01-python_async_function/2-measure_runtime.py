@@ -5,7 +5,9 @@ for wait_n and returns the average time'''
 
 import asyncio
 import time
-from 1-concurrent_coroutines import wait_n
+
+
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
 def measure_time(n: int, max_delay: int) -> float:
