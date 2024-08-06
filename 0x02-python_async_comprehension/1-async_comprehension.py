@@ -8,7 +8,7 @@ async_generator = __import__('0-async_generator').async_generator
 
 async def async_comprehension():
     '''asynchronous return the numbers from async_generator'''
-    result = []
+    num = []
     async for num in async_generator():
-        result.append(num)
-    return result
+        num.append(num)
+    return num
