@@ -11,4 +11,4 @@ async def async_generator():
     '''yields a random number with a 1 second delay'''
     for i in range(10):
         await asyncio.sleep(1)
-        yield random.uniform(0, 10)
+        yield random(0, 10)
