@@ -12,4 +12,4 @@ async def async_comprehension() -> List[float]:
     result = []
     async for num in async_generator():
         result.append(num)
-    return result
+    print(result)
