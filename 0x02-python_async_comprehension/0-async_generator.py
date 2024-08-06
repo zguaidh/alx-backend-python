@@ -5,7 +5,6 @@ between 0 and 10 with a 1 second delay'''
 
 import asyncio
 import random
-from typing import AsyncGenerator
 
 
 async def async_generator():
