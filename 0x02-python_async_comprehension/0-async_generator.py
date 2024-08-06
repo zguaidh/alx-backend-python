@@ -8,7 +8,7 @@ import random
 from typing import AsyncGenerator
 
 
-async def async_generator() -> AsyncGenerator[float, None]:
+async def async_generator() -> AsyncGenerator[float, int]:
     '''yields a random number with a 1 second delay'''
     for i in range(10):
         await asyncio.sleep(1)
