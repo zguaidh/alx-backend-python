@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-""" Module for testing client """
-
+"""
+Module for unittesting client script
+"""
 from client import GithubOrgClient
 from fixtures import TEST_PAYLOAD
 from parameterized import parameterized, parameterized_class
@@ -76,14 +77,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        """A class method called before tests in an individual class are run"""
-        # def my_side_effect(url):
-        #     """ Side Effect function for test """
-        #     test_url = "https://api.github.com/orgs/google"
-        #     if url == test_url:
-        #         return cls.org_payload
-        #     return cls.repos_payload
-
+        """Setup method"""
         config = {'return_value.json.side_effect':
                   [
                       cls.org_payload, cls.repos_payload,
@@ -95,7 +89,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         cls.mock = cls.get_patcher.start()
 
     def test_public_repos(self):
-        """ Integration test: public repos"""
+        """ Integration test: public repos without license"""
         test_class = GithubOrgClient("google")
 
         self.assertEqual(test_class.org, self.org_payload)
@@ -116,5 +110,5 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """A class method called after tests in an individual class have run"""
+        """ Teardown method"""
         cls.get_patcher.stop()
