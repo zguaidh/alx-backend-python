@@ -22,5 +22,5 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
 
-if _name__ == '__main__':
+if __name__ == '__main__':
     unittest.main()
