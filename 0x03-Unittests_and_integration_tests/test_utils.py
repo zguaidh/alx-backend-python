@@ -14,7 +14,7 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2),
-    ])
+    ], names=["nested_map", "path", "expected"])
     def test_access_nested_map(self, nested_map, path, expected):
         """
         Test method to test the access_nested_map
